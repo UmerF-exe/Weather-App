@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="container">
+        <div class="upperside">
+            <div class="left" id="left">
+
+            </div>
+            <div class="right">
+                <img src="images/battery.png" alt="">
+            </div>
+        </div>
+        <div class="weather">
+            <h1>Today's Weather </h1>
+            <div class="input">
+                <input type="text" id="input" placeholder="Enter city" spellcheck="false">
+                <button id="checkBtn" onclick="checkWeather()">CHECK</button>
+            </div>
+            <div class="weather1">
+                <img src="images/clear.png" alt="">
+                <h1 id="temperature">22</h1>
+                <h3 id="city">Jamshoro</h3>
+            </div>
+            <div class="weather2">
+                <div class="humidity">
+                    <div class="left">
+                        <img src="images/humidity.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p><span id="humidity">64%</span><br>Humidity</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <div class="left">
+                        <img src="images/wind.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p><span id="wind">18 km/hr</span><br>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
+
 </html>
