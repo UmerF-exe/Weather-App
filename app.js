@@ -52,5 +52,24 @@ async function checkWeather(){
 
 }
 
+window.onload = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=70f61d33bf6cd9eea2dc5f329e350704&units=metric`;
+            
+            const response = await fetch(apiURL);
+            let data = await response.json();
+            console.log(data);
+
+            document.getElementById("temperature").innerHTML = Math.round(data.main.temp) + " °C";
+            document.getElementById("city").innerHTML = data.name;
+            document.getElementById("humidity").innerHTML = data.main.humidity + "%";
+            document.getElementById("wind").innerHTML = data.wind.speed + " km/h";
+        });
+    }
+};
+
 let inputBtn = document.getElementById("checkBtn");
 inputBtn.addEventListener("click",  checkWeather);
